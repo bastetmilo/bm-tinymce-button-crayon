@@ -25,23 +25,22 @@ function bm_add_new_tc_button() {
       add_filter("mce_external_plugins", "bm_add_tinymce_plugin");
       add_filter('mce_buttons', 'bm_register_my_tc_button');
    }
-
-    function bm_add_tinymce_plugin($plugin_array) {
-      $plugin_array['bm_tc_button'] = plugins_url( '/script.js', __FILE__ );
-      return $plugin_array;
-    }
-    
-    function bm_register_my_tc_button($buttons) {
-        array_push($buttons, "bm_tc_button");
-        return $buttons;
-    }
-
-    add_action('admin_enqueue_scripts', 'bm_tc_css');
- 
-    function bm_tc_css() {
-        wp_enqueue_style('bm-tc', plugins_url( '/style.css', __FILE__));
-    }
-
 }
- 
+
+function bm_add_tinymce_plugin($plugin_array) {
+  $plugin_array['bm_tc_button'] = plugins_url( '/script.js', __FILE__ );
+  return $plugin_array;
+}
+
+function bm_register_my_tc_button($buttons) {
+    array_push($buttons, "bm_tc_button");
+    return $buttons;
+}
+
+add_action('admin_enqueue_scripts', 'bm_tc_css');
+
+function bm_tc_css() {
+    wp_enqueue_style('bm-tc', plugins_url( '/style.css', __FILE__));
+}
+
 ?>

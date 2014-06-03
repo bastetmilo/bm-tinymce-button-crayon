@@ -2,7 +2,7 @@
     tinymce.PluginManager.add('bm_tc_button', function( editor, url ) {
         editor.addButton( 'bm_tc_button', {
             title: 'Dodaj tag pre',
-            icon: 'wp_code',
+            icon: 'icon dashicons-wordpress',
             onclick: function() {
     			editor.windowManager.open( {
          		title: 'Wpisz język',
